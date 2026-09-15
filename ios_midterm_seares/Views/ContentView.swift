@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authController: AuthController
     
     var body: some View {
-        if authViewModel.userSession != nil {
+        if authController.userSession != nil {
             MainTabView()
         } else {
             LoginView()
@@ -14,5 +14,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(AuthViewModel())
+        .environmentObject(AuthController())
+        .environmentObject(FamilyController())
 }

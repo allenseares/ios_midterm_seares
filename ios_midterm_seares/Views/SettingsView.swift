@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authController: AuthController
     
     var body: some View {
         NavigationView {
             List {
                 Section {
                     Button(action: {
-                        authViewModel.signOut()
+                        authController.signOut()
                     }) {
                         HStack {
                             Text("Sign Out")
@@ -27,5 +27,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environmentObject(AuthViewModel())
+        .environmentObject(AuthController())
 }

@@ -8,12 +8,12 @@ struct MainTabView: View {
                     Image(systemName: "list.clipboard")
                     Text("List")
                 }
-            Text("History")
+            HistoryView()
                 .tabItem {
                     Image(systemName: "clock")
                     Text("History")
                 }
-            Text("Family")
+            FamilyView()
                 .tabItem {
                     Image(systemName: "person.3")
                     Text("Family")
@@ -30,4 +30,6 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .environmentObject(AuthController())
+        .environmentObject(FamilyController())
 }

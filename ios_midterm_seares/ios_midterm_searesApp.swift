@@ -13,12 +13,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct YourApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @StateObject private var authController = AuthController()
+  @StateObject private var familyController = FamilyController()
 
   var body: some Scene {
     WindowGroup {
-      NavigationView {
-        ContentView()
-      }
+      ContentView()
+        .environmentObject(authController)
+        .environmentObject(familyController)
     }
   }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authController: AuthController
     @State private var email = ""
     @State private var password = ""
     
@@ -63,7 +63,7 @@ struct LoginView: View {
                 }
                 
                 Button(action: {
-                    authViewModel.signIn(email: email, password: password)
+                    authController.signIn(email: email, password: password)
                 }) {
                     Text("Sign In")
                         .font(.headline)
@@ -86,5 +86,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(AuthViewModel())
+        .environmentObject(AuthController())
 }

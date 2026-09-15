@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import FirebaseAuth
 
-class AuthViewModel: ObservableObject {
+class AuthController: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     
     init() {
